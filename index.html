@@ -7,12 +7,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="lockOverlay" class="lock-overlay">
-  <div class="lock-message">
-    <h2>☠️ Tidur anjirr kerja terus capek</h2>
-    <p>Website hanya dapat diakses pukul <strong>06.00 – 21.00 WIB</strong>.</p>
-  </div>
-</div>
     <div class="header-top">
   <span>Apolion Store</span>
 </div>
@@ -85,8 +79,37 @@
       <!-- Tambahkan produk lainnya sesuai kebutuhan -->
 
 
-          
+    </section>
+  </div>      
         
-  
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const now = new Date();
+    const wibHour = (now.getUTCHours() + 7) % 24;
+
+    const isOpen = wibHour >= 6 && wibHour < 21;
+
+    if (!isOpen) {
+      document.body.innerHTML = ''; // kosongkan body
+      const overlay = document.createElement('div');
+      overlay.className = 'lock-overlay';
+      overlay.innerHTML = `
+        <div class="lock-message">
+          <h2>⏰ Website Tutup</h2>
+          <p>Website hanya dapat diakses pukul <strong>06.00 – 21.00 WIB</strong>.</p>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      document.body.style.display = "flex";
+      document.body.style.justifyContent = "center";
+      document.body.style.alignItems = "center";
+      document.body.style.flexDirection = "column";
+      document.body.style.height = "100vh";
+      document.body.style.margin = "0";
+    }
+  });
+    </script>
 </body>
 </html>
