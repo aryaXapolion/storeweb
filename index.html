@@ -81,19 +81,24 @@
 
           <section class="laporan-section">
   <h2>Kirim Laporan</h2>
-  <form action="https://formsubmit.co/aryayogasakti@gmail.com" method="POST">
-    <!-- Anti spam -->
-    <input type="hidden" name="_captcha" value="false">
-    <!-- Redirect setelah sukses -->
-    <input type="hidden" name="_next" value="https://apolionstore.vercel.app/terkirim.html">
-
+  <form id="laporanForm">
     <input type="text" name="nama" placeholder="Nama Anda" required>
     <input type="email" name="email" placeholder="Email Anda" required>
     <textarea name="pesan" placeholder="Isi laporan Anda..." required></textarea>
     <button type="submit">Kirim Laporan</button>
   </form>
 </section>
-    </section>
+
+<!-- Popup Sukses -->
+<div id="popupSuccess" class="popup">
+  <div class="popup-content">
+    <h3>✅ Laporan Berhasil Dikirim!</h3>
+    <p>Terima kasih atas laporan Anda.</p>
+    <button onclick="closePopup()">Tutup</button>
   </div>
+</div>
+
+        
+  
 </body>
 </html>
