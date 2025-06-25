@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const now = new Date();
   const wibHour = (now.getUTCHours() + 7) % 24;
 
-  const isOpen = wibHour >= 6 && wibHour < 20;
+  const isOpen = wibHour >= 6 && wibHour < 22;
 
   if (!isOpen) {
     document.body.innerHTML = ''; // Kosongkan body (opsional)
