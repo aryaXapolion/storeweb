@@ -16,3 +16,17 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  const now = new Date();
+  const wibHour = (now.getUTCHours() + 7) % 24;
+
+  const isOpen = wibHour >= 6 && wibHour < 21;
+
+  if (!isOpen) {
+    document.body.innerHTML = ''; // Kosongkan body (opsional)
+    document.body.appendChild(document.getElementById("lockOverlay"));
+    document.getElementById("lockOverlay").style.display = "flex";
+  }
+});
