@@ -181,6 +181,39 @@ body {
   font-family: 'Courier New', monospace;
 }
 
+
+.laporan-section {
+  margin-top: 60px;
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 15px;
+  color: white;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.laporan-section h2 {
+  margin-bottom: 15px;
+}
+
+.laporan-section form input,
+.laporan-section form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.laporan-section form button {
+  padding: 10px 20px;
+  background-color: crimson;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
 @keyframes pulseGlow {
   0% {
     box-shadow: 0 0 10px #f00, 0 0 20px #f00;
