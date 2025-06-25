@@ -16,38 +16,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-document.getElementById("laporanForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // Cegah reload
-
-  const form = e.target;
-
-  // Kirim data ke FormSubmit
-  fetch("https://formsubmit.co/ajax/aryayogasakti@gmail.com", {
-    method: "POST",
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      nama: form.nama.value,
-      email: form.email.value,
-      pesan: form.pesan.value
-    })
-  })
-  .then(response => {
-    if (response.ok) {
-      showPopup();
-      form.reset();
-    } else {
-      alert("❌ Gagal mengirim laporan.");
-    }
-  })
-  .catch(error => {
-    alert("❌ Error: " + error.message);
-  });
-});
-
-function showPopup() {
-  document.getElementById("popupSuccess").style.display = "block";
-}
-
-function closePopup() {
-  document.getElementById("popupSuccess").style.display = "none";
-}
